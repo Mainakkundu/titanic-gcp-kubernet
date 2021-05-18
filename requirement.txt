@@ -1,0 +1,13 @@
+--extra-index-url=${PIP_EXTRA_INDEX_URL}
+
+#api
+flask==1.0.2
+
+marshmallow==2.17.0
+#local regression_model
+#-e "/regression_model"
+
+
+
+#Deployment
+gunicorn==19.9.0
