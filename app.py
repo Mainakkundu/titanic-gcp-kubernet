@@ -6,7 +6,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-model = load_model('regression_model_output_v0.0.1')
+model = pickle.load(open('regression_model_output_v0.0.1.pkl', 'rb'))
 cols = ['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare','Embarked']
 
 
@@ -24,4 +24,4 @@ def predict_api():
     return jsonify(prediction)
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=config.PORT, debug=config.DEBUG_MODE)
+    app.run(host="0.0.0.0",port=config.PORT, debug=config.DEBUG_MODE)
